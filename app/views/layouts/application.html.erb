@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <h2>Bookers</h2>
     <ul class="nav navbar-nav">
       <% if user_signed_in? %>
         <li class="">
@@ -41,4 +42,7 @@
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
+  <footer>
+    <p class="text-right"> CopyRight Infratop.inc</p>
+  </footer>
 </html>
