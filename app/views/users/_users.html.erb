@@ -1,0 +1,31 @@
+<div class="sidemenu-user">
+  <div class="container-fluid masonry-container">
+    <div class="row">
+      <div class="col-lg-3">
+        <table class="table table-user">
+          <h4>User info</h4>
+          <thead>
+            <tr><%= attachment_image_tag @user, :image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></tr>
+            <tr>
+              <th>name</th>
+              <th><%= @user.name %></th>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <th><%= @user.introduction %></th>
+            </tr>
+            <tr>
+              <% if @user.id == current_user.id %>
+                <button type="button" class="btn btn-outline-edit">
+                  <%= link_to ("edit_user(@user)") do %>
+                  <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                  <% end %>
+                </button>
+              <% end %>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
