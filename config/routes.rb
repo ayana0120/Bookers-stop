@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  authenticated :user do
+    root :to => "users#show", :as => "user_authenticated_root"
+  end
+
   root "homes#top"
+
 
   devise_for :users, controllers: {
     sessions: 'devise/sessions',
